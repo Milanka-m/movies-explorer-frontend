@@ -1,0 +1,138 @@
+.elements__movie {
+  width: calc((100% - 48px)/3); 
+  margin-bottom: 37px; 
+  border-radius: 10px; 
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, .08);
+  overflow: hidden;
+}
+
+.elements__movie-image {
+  width: 100%; 
+  padding-bottom: 56%; 
+  background-size: cover; 
+  background-position: center; 
+}
+
+.elements__label {
+  min-height: 78px; 
+  background-color: #fff; 
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px; 
+  padding-right: 24px; 
+  box-sizing: border-box;
+  position: relative;
+}
+
+.elements__list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.elements__heading {
+  max-width: 290px; 
+  font-weight: 500; 
+  font-size: .8rem; 
+  line-height: 1.21; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  margin: 0;
+}
+
+.elements__time {
+  margin: 0;
+  font-weight: 400; 
+  font-size: .68rem; 
+  line-height: 1.21; 
+  color: #a0a0a0;
+  padding-top: 17px;
+}
+
+.elements__icon-favorite { 
+  width: 14px; 
+  height: 12px; 
+  margin: 0; 
+  margin-bottom: 30px;
+  background-image: url(../../images/icon-favorite-bord.svg); 
+  background-size: cover; 
+  cursor: pointer; 
+  background-color: transparent; 
+  border: 0; 
+  transition: opacity .4s;
+} 
+ 
+.elements__icon-favorite:hover { 
+  opacity: .6; 
+} 
+ 
+.elements__icon-favorite:active, .elements__icon-favorite:focus { 
+  background-image: url(../../images/icon-favorite.svg); 
+  background-size: cover; 
+  outline: none; 
+}
+
+.elements__button-delete { 
+  width: 60%;
+  height: 78px;
+  margin: 0; 
+  cursor: pointer; 
+  background-color: transparent; 
+  border: 0; 
+  transition: opacity .4s;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+} 
+ 
+.elements__button-delete:hover { 
+  opacity: 1; 
+} 
+
+.elements__icon-delete {
+  padding: 0 0 30px 160px;
+}
+
+@media screen and (max-width: 1100px) { 
+  .elements__heading {
+    max-width: 240px; 
+  }
+} 
+
+@media screen and (min-width: 551px) and (max-width: 990px) { 
+  .elements__movie { 
+    width: calc((100% - 30px)/2); 
+    margin-bottom: 30px;
+  } 
+} 
+ 
+@media screen and (max-width: 600px) {
+  .elements__label {
+    min-height: 69px;
+    padding-left: 14px; 
+    padding-right: 18px;
+  }
+
+  .elements__heading {
+    font-size: .75rem;
+  }
+
+  .elements__time {
+    padding-top: 14px;
+    font-size: .62rem;
+  }
+}
+
+@media screen and (max-width: 550px) { 
+  .elements__movie { 
+    width: 100%; 
+    margin-bottom: 14px;
+  } 
+} 
