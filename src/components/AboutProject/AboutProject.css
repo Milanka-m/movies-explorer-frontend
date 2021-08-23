@@ -1,0 +1,154 @@
+.project {
+  max-width: calc(100% - 140px);
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 110px 0;
+}
+
+.project__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.37rem;
+  line-height: 1.21;
+  letter-spacing: -4%;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #000;
+}
+
+.project__cards {
+  list-style: none;
+  padding-left: 0;
+  padding: 70px 0 110px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project__item:first-child {
+  padding-right: 30px;
+}
+
+.project__subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.21;
+  letter-spacing: -4%;
+}
+
+.project__text {
+  margin: 0;
+  padding-top: 26px;
+  font-weight: 400;
+  font-size: .87rem;
+  line-height: 1.43;
+}
+
+.project__stage {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project__stage-item {
+  text-decoration: none;
+  margin: 0;
+}
+
+.project__stage-item:first-child {
+  width: 20%;
+}
+
+.project__stage-item:last-child {
+  width: 80%;
+}
+
+.project__stage-title {
+  margin: 0;
+  padding: 9px 0;
+  font-weight: 400;
+  font-size: .87rem;
+  line-height: 1.21;
+  text-align: center;
+}
+
+.project__stage-title_color_green {
+  background-color: #2be080;
+}
+
+.project__stage-title_color_gray {
+  background-color: #f2f2f2;
+}
+
+.project__stage-subtitle {
+  margin: 0;
+  padding-top: 14px;
+  font-weight: 500;
+  font-size: .87rem;
+  line-height: 1.21;
+  text-align: center;
+  color: #a0a0a0;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .project {
+    max-width: calc(100% - 100px);
+    padding: 90px 0;
+  }
+
+  .project__cards {
+    padding: 70px 0 93px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .project {
+    max-width: calc(100% - 36px);
+    padding: 70px 0;
+  }
+
+  .project__title {
+    font-size: 1.12rem;
+    padding-bottom: 28px;
+  }
+
+  .project__cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+   }
+
+  .project__item:first-child {
+    padding-bottom: 56px;
+  }
+
+  .project__subtitle {
+    font-size: 1.05rem;
+  }
+
+  .project__text {
+    font-size: .68rem;
+    line-height: 1.45;
+  }
+
+  .project__stage-item:first-child {
+    width: 30%;
+  }
+  .project__stage-item:last-child {
+    width: 70%;
+  }
+
+  .project__stage-title {
+    font-size: .68rem;
+  }
+
+  .project__stage-subtitle {
+    font-size: .68rem;
+    line-height: 1.15;
+  }
+
+}

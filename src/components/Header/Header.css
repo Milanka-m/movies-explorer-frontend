@@ -1,0 +1,25 @@
+.header_dark {
+  background-color: #073042;
+}
+
+.header__container {
+  max-width: calc(100% - 140px);
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .header__container {
+    max-width: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__container {
+    max-width: calc(100% - 28px);
+  }
+}

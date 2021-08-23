@@ -1,0 +1,12 @@
+.login__form-input-container {
+  margin: 0 auto;
+  border: 0;
+  padding: 40px 0 179px;
+}
+
+@media screen and (max-width: 530px) {
+  .login__form-input-container {
+    padding: 80px 0 267px;
+    width: 100%;
+  }
+}
