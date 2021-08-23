@@ -18,7 +18,6 @@ function MoviesCard({ location, movie }) {
             <img className="elements__icon-delete" src={iconDelete} alt="Кнопка удалить фильм" />
           </button>
         )}
-        
       </div> 
     </article> 
   );

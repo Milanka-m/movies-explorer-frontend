@@ -78,7 +78,6 @@
 }
 
 .elements__button-delete { 
-  width: 60%;
   height: 78px;
   margin: 0; 
   cursor: pointer; 
@@ -88,7 +87,7 @@
   opacity: 0;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 5px;
   box-sizing: border-box;
 } 
  
@@ -100,20 +99,29 @@
   padding: 0 0 30px 160px;
 }
 
-@media screen and (max-width: 1100px) { 
+@media screen and (min-width: 1001px) and (max-width: 1200px) {
   .elements__heading {
-    max-width: 240px; 
+    max-width: 170px; 
   }
-} 
+}
 
-@media screen and (min-width: 551px) and (max-width: 990px) { 
+@media screen and (min-width: 601px) and (max-width: 1000px) { 
   .elements__movie { 
     width: calc((100% - 30px)/2); 
     margin-bottom: 30px;
   } 
+
+  .elements__heading {
+    max-width: 200px; 
+  }
 } 
  
 @media screen and (max-width: 600px) {
+  .elements__movie { 
+    width: 100%; 
+    margin-bottom: 14px;
+  } 
+
   .elements__label {
     min-height: 69px;
     padding-left: 14px; 
@@ -122,6 +130,7 @@
 
   .elements__heading {
     font-size: .75rem;
+    max-width: 240px;
   }
 
   .elements__time {
@@ -129,10 +138,3 @@
     font-size: .62rem;
   }
 }
-
-@media screen and (max-width: 550px) { 
-  .elements__movie { 
-    width: 100%; 
-    margin-bottom: 14px;
-  } 
-} 
