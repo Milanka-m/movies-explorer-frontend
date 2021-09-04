@@ -47,6 +47,10 @@
   color: #a0a0a0;
 }
 
+.search__form-input-placeholder::placeholder {
+  color: #ff3050;
+}
+
 .search__form-handlers {
   margin: 0;
   width: 80px;

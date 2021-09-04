@@ -6,7 +6,7 @@
   max-width: calc(100% - 140px);
   margin: 0 auto;
   box-sizing: border-box;
-  padding-top: 18px;
+  padding: 18px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
