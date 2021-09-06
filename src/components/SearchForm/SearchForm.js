@@ -15,7 +15,7 @@ function SearchForm({ getInitialMovies, shortMovieFilter, onCheckboxChange }) {
     e.preventDefault();
     // если строка без пробельных символов равна нулю устанавливаем фокус полю
     if (searchQuery.trim().length === 0) {
-      setPlaceHolderMessage('Введите ключевое слово');
+      setPlaceHolderMessage('Нужно ввести ключевое слово');
       setPlaceholderShow(true);
       inputRef.current.focus();
     } else {

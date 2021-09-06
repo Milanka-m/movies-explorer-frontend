@@ -12,6 +12,7 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
+import InfoTooltip from '../InfoTooltip/InfoTooltip';
 import { 
   register, 
   authorize, 
@@ -27,6 +28,8 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [userMovies, setUserMovies] = React.useState([]);
   const [serverError, setServerError] = React.useState(null);
+  const [errorMessage, setErrorMessage] = React.useState(false);
+  const [isInfoProfilePopupOpen, setIsInfoProfilePopupOpen] = React.useState(false)
   
   const history = useHistory();
 
@@ -34,11 +37,11 @@ function App() {
     console.log(error);
   }
 
-  React.useEffect(() => {
+  React.useEffect(() => { 
     const token = localStorage.getItem('token');
     if (token) {
       tokenCheck(token);
-    }
+    } 
   }, [])
 
   function authorizeUser(email, password) {
@@ -68,11 +71,16 @@ function App() {
   function tokenCheck(token) {
     return getUser(token)
       .then((userData) => {
-        setCurrentUser(userData.user);
-        setLoggedIn(true);
-        getSavedMoviesCards();
+        if (userData) {
+          setCurrentUser(userData.user);
+          setLoggedIn(true);
+          getSavedMoviesCards();
+        }
       })
-      .catch(handleError);
+      .catch((err) => {
+        console.log(err);
+        handleLogout();
+      });
   }
 
   function handleRegister({ name, email, password }) {
@@ -102,17 +110,25 @@ function App() {
     setUserMovies([]);
   }
 
+  function closeAllPopup() {
+    setIsInfoProfilePopupOpen(false);
+  }
+
   function handleUpdateUser(newUserData) {
     updateUser(newUserData)
       .then(userData => {
         setCurrentUser(userData.user);
         setServerError(null);
+        setErrorMessage(false);
+        setIsInfoProfilePopupOpen(true);
       })
       .catch((err) => {
         if (err === 'Ошибка: 400') {
           setServerError(400);
         }
         console.log(err);
+        setErrorMessage(true);
+        setIsInfoProfilePopupOpen(true);
       });
   } 
 
@@ -185,6 +201,7 @@ function App() {
               onUpdateUser={handleUpdateUser}
               handleLogout={handleLogout}
               serverError={serverError}
+              errorMessage={errorMessage}
             />
           </ProtectedRoute>
 
@@ -203,7 +220,7 @@ function App() {
           </Route>
 
            <Route>
-            {loggedIn ? <Redirect to="/movies" /> : <Redirect to="/signin" />}
+            {loggedIn ? <Redirect to="/movies" /> : <Redirect to="/" />}
           </Route>
 
           <Route exact path="/*">
@@ -212,6 +229,8 @@ function App() {
 
         </Switch>
         <Footer />
+
+        <InfoTooltip error={errorMessage} isOpen={isInfoProfilePopupOpen} onClose={closeAllPopup} />
       </div>
     </CurrentUserContext.Provider>
   );

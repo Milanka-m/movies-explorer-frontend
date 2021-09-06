@@ -20,10 +20,16 @@ function Movies({ location, onMovieSave, onMovieDelete, savedUserMovies }) {
       } else {
         setinitialMovies([]);
       }
+      setShortMovieFilter(false);
   }, []);
 
   const handleCheckboxChange = () => {
     setShortMovieFilter(!shortMovieFilter);
+    const lastSavedMovies = JSON.parse(localStorage.getItem('movies'));
+    if (lastSavedMovies) {
+      const moviesFilter = lastSavedMovies.filter(movieCard => movieCard.duration <= 40);
+      setinitialMovies(moviesFilter);
+    }
   }
 
   function getInitialMovies(query) {
@@ -33,9 +39,7 @@ function Movies({ location, onMovieSave, onMovieDelete, savedUserMovies }) {
     getMovies()
       .then((movies) => {
         const moviesCards = movies.filter(movie => filterMovies(movie, query));
-        setinitialMovies(!shortMovieFilter 
-          ? moviesCards 
-          : moviesCards.filter(movieCard => movieCard.duration <= 40));
+        setinitialMovies(moviesCards);
         localStorage.setItem('movies', JSON.stringify(moviesCards));
         setShortMovieFilter(false);
       })
@@ -53,7 +57,7 @@ function Movies({ location, onMovieSave, onMovieDelete, savedUserMovies }) {
       <SearchForm 
         getInitialMovies={getInitialMovies} 
         shortMovieFilter={shortMovieFilter} 
-        onCheckboxChange={handleCheckboxChange} 
+        onCheckboxChange={handleCheckboxChange}
       />
       <Preloader isShow={isPreloaderShow} />
       {initialMovies.length > 0 ? (
@@ -65,7 +69,7 @@ function Movies({ location, onMovieSave, onMovieDelete, savedUserMovies }) {
           onMovieSave={onMovieSave}
         />
       ) : (
-        isErrorMessage ? <NotFoundMovies isErrorMessage={isErrorMessage} /> : <></>
+        isErrorMessage ? <></> : <NotFoundMovies isErrorMessage={isErrorMessage} />
       )}
     </main>
   );

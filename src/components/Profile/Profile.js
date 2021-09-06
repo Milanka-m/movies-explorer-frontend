@@ -37,8 +37,9 @@ function Profile({ onUpdateUser, handleLogout, serverError }) {
     if(Object.keys(currentUser).length) {
       setName(currentUser.name);
       seEmail(currentUser.email);
+      setIsValid(Object.keys(values).length)
     }
-  }, [currentUser, valid]);
+  }, [currentUser, setIsValid, values]);
 
   function handleInputChange(e) {
     handleChange(e);
@@ -113,7 +114,7 @@ function Profile({ onUpdateUser, handleLogout, serverError }) {
           <button 
             type="submit" 
             className={`profile__form-button ${
-              isValid ? '' : 'profile__form-button_disabled'}`}
+              !isValid ? 'profile__form-button_disabled' : ''}`}
             disabled={!isValid}
           >
             Редактировать
