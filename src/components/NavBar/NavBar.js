@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className="header__hamburger-menu">
       <input id="header__menu-toggle" type="checkbox" />
-      <label className="header__menu-btn" for="header__menu-toggle">
+      <label className="header__menu-btn" htmlFor="header__menu-toggle">
         <span className="header__span"></span>
       </label>
       <div className="header__menu-container">
