@@ -6,6 +6,8 @@
 
 Ссылка на проект: **[MoviesExplorer](http://movies-explorer-22.nomoredomains.club/)**
 
+Ссылка на проект в **[GitHub Pages](https://milanka-m.github.io/movies-explorer-frontend/)**
+
 Ссылка на репозиторий бекенда : **[MoviesExplorer API](https://github.com/Milanka-m/movies-explorer-api)**
 
 Ссылка на макет в **[Figma](https://www.figma.com/proto/5tGlo8xmoQEpKvvr6ebG6x/Diploma-Copy?page-id=891%3A3857&node-id=932%3A2618&viewport=306%2C48%2C0.85&scaling=min-zoom)**
