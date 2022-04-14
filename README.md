@@ -4,8 +4,6 @@
 
 ## Проект MoviesExplorer - выпускная работа по профессии веб-разработчик курса [Яндекс Практикум](https://praktikum.yandex.ru 'Яндекс Практикум')
 
-Ссылка на проект: **[MoviesExplorer](http://movies-explorer-22.nomoredomains.club/)**
-
 Ссылка на проект в **[GitHub Pages](https://milanka-m.github.io/movies-explorer-frontend/)**
 
 Ссылка на репозиторий бекенда : **[MoviesExplorer API](https://github.com/Milanka-m/movies-explorer-api)**
